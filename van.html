@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkable List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .category {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .item {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Checkable List</h1>
+    
+    <div class="category">Packing List</div>
+    <label class="item"><input type="checkbox" id="item1"> Satteltasche</label><br>
+    <label class="item"><input type="checkbox" id="item5"> Kopfkissen</label><br>
+    <label class="item"><input type="checkbox" id="item8"> Stirnlampe</label><br>
+    <label class="item"><input type="checkbox" id="item9"> Handtuch</label><br>
+    <label class="item"><input type="checkbox" id="item10"> Kulturbeutel</label><br>
+    <label class="item"><input type="checkbox" id="item11"> Feuchte Tücher</label><br>
+    <label class="item"><input type="checkbox" id="item12"> Zahnbürste</label><br>
+    <label class="item"><input type="checkbox" id="item13"> Duschgel</label><br>
+    <label class="item"><input type="checkbox" id="item14"> Sonnencreme</label><br>
+    <label class="item"><input type="checkbox" id="item15"> Mückenspray</label><br>
+
+    <div class="category">Kleidung</div>
+    <label class="item"><input type="checkbox" id="item16"> Helm</label><br>
+    <label class="item"><input type="checkbox" id="item17"> Fahrradtrikot</label><br>
+    <label class="item"><input type="checkbox" id="item18"> (2. Fahrradtrikot)</label><br>
+    <label class="item"><input type="checkbox" id="item19"> Fahrradhose (kurz)</label><br>
+    <label class="item"><input type="checkbox" id="item20"> Innenhose</label><br>
+    <label class="item"><input type="checkbox" id="item21"> Fahrradschuhe</label><br>
+    <label class="item"><input type="checkbox" id="item22"> Sportsocken</label><br>
+    <label class="item"><input type="checkbox" id="item23"> Handschuhe (kurz)</label><br>
+    <label class="item"><input type="checkbox" id="item24"> Regenjacke</label><br>
+    <label class="item"><input type="checkbox" id="item25"> Regenhose</label><br>
+    <label class="item"><input type="checkbox" id="item26"> Überzieher</label><br>
+    <label class="item"><input type="checkbox" id="item27"> Armlinge</label><br>
+    <label class="item"><input type="checkbox" id="item28"> Schlauchtuch</label><br>
+    <label class="item"><input type="checkbox" id="item29"> Flipflops</label><br>
+    <label class="item"><input type="checkbox" id="item30"> Daunenweste</label><br>
+    <label class="item"><input type="checkbox" id="item31"> 2 T-Shirt</label><br>
+    <label class="item"><input type="checkbox" id="item32"> Softshellhose/Wanderhose?</label><br>
+    <label class="item"><input type="checkbox" id="item33"> Kurze Hose</label><br>
+    <label class="item"><input type="checkbox" id="item34"> Sneakersocken</label><br>
+    <label class="item"><input type="checkbox" id="item36"> Sportbrille</label><br>
+
+    <div class="category">Küche</div>
+    <label class="item"><input type="checkbox" id="item39"> Messer</label><br>
+    <label class="item"><input type="checkbox" id="item42"> Feuerzeug / Anzünder</label><br>
+
+    <div class="category">Sonstiges</div>
+    <label class="item"><input type="checkbox" id="item44"> Erste Hilfe / Medikamente</label><br>
+    <label class="item"><input type="checkbox" id="item45"> Powerbank</label><br>
+    <label class="item"><input type="checkbox" id="item46"> Schloss?</label><br>
+    <label class="item"><input type="checkbox" id="item47"> USB Kabel</label><br>
+    <label class="item"><input type="checkbox" id="item48"> Lichter?</label><br>
+    <label class="item"><input type="checkbox" id="item49"> Packsäcke</label><br>
+
+    <div class="category">Werkstatt</div>
+    <label class="item"><input type="checkbox" id="item50"> Ersatzschlauch</label><br>
+    <label class="item"><input type="checkbox" id="item51"> Ventiladapter</label><br>
+    <label class="item"><input type="checkbox" id="item52"> Reifenheber</label><br>
+    <label class="item"><input type="checkbox" id="item53"> Multitool</label><br>
+    <label class="item"><input type="checkbox" id="item54"> Kettenöl</label><br>
+    <label class="item"><input type="checkbox" id="item55"> Handschuhe</label><br>
+    <label class="item"><input type="checkbox" id="item56"> Luftpumpe</label><br>
+
+    <div class="category">Weiteres</div>
+    <label class="item"><input type="checkbox" id="item57"> Trinkflaschen</label><br>
+    <label class="item"><input type="checkbox" id="item58"> Gewürze?</label><br>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+            // Load the checked state from localStorage
+            checkboxes.forEach(checkbox => {
+                const checked = localStorage.getItem(checkbox.id);
+                checkbox.checked = checked === 'true';
+            });
+
+            // Save the checked state to localStorage on change
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    localStorage.setItem(checkbox.id, checkbox.checked);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
