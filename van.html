@@ -44,7 +44,32 @@
     <label class="item"><input type="checkbox" id="item15" /> Mückenspray</label
     ><br />
 
-    <div class="category">Kleidung</div>
+    <div class="category">Klamotten (Sommerlich)</div>
+    <label class="item"><input type="checkbox" id="item" /> Sonnenhut</label
+    ><br />
+    <label class="item"><input type="checkbox" id="item" /> Sonnenbrille</label
+    ><br />
+    <label class="item"><input type="checkbox" id="item" /> Leichte Jacke</label
+    ><br />
+    <label class="item"><input type="checkbox" id="item" /> Kurze Hose</label
+    ><br />
+    <label class="item"
+      ><input type="checkbox" id="item" /> Dünne lange Hose</label
+    ><br />
+    <label class="item"><input type="checkbox" id="item" /> T-Shirts</label
+    ><br />
+    <label class="item"><input type="checkbox" id="item" /> Unterhosen</label
+    ><br />
+    <label class="item"><input type="checkbox" id="item" /> Socken</label><br />
+    <label class="item"><input type="checkbox" id="item" /> Badehose</label
+    ><br />
+    <label class="item"><input type="checkbox" id="item" /> Flipflops</label
+    ><br />
+    <label class="item"><input type="checkbox" id="item" /> Wanderschuhe</label
+    ><br />
+    <br />
+
+    <div class="category">Kleidung Sport</div>
     <label class="item"><input type="checkbox" id="item16" /> Helm</label><br />
     <label class="item"
       ><input type="checkbox" id="item17" /> Fahrradtrikot</label
@@ -140,7 +165,7 @@
     <label class="item"><input type="checkbox" id="item58" /> Gewürze?</label
     ><br />
     <br />
-    <button onclick="">Clear localStorage</button>
+    <button id="btnClear">Clear</button>
 
     <script>
       document.addEventListener("DOMContentLoaded", (event) => {
@@ -163,8 +188,8 @@
         });
 
         // Clear localStorage
-        document.querySelector("button").addEventListener("click", () => {
-          if (confirm("Are you sure you want to clear the localStorage?")) {
+        document.getElementById("btnClear").addEventListener("click", () => {
+          if (confirm("Are you sure you want to clear all items?")) {
             localStorage.clear();
             checkboxes.forEach((checkbox) => {
               checkbox.checked = false;
